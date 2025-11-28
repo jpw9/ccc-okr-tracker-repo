@@ -1,0 +1,7 @@
+
+.hierarchy-node {
+    transition: all 0.2s ease-in-out;
+}
+.hierarchy-expand-btn {
+    transition: transform 0.2s;
+}
