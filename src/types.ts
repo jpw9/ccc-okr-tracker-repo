@@ -14,21 +14,26 @@ export enum Role {
   VIEWER = 'Viewer'
 }
 
-export interface User {
-  id: string | number;
-  name: string;
-  email: string;
-  role: Role;
-  department?: string;
-  avatar?: string;
-}
-
 export interface BaseEntity {
   id: string | number;
+  isActive?: boolean; // New: Soft delete flag
   createdAt?: string;
   updatedAt?: string;
   createdBy?: string;
   updatedBy?: string;
+}
+
+export interface User extends BaseEntity {
+  groupNo?: string; // New
+  firstName: string; // New
+  lastName: string; // New
+  name: string; // Kept for backward compatibility and display (e.g., full name)
+  email: string;
+  login?: string; // New
+  role: Role;
+  department?: string;
+  projectId?: string | number | null; // New: Project association
+  avatar?: string;
 }
 
 export interface ActionItem extends BaseEntity {

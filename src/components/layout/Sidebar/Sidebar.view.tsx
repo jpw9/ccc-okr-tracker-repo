@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { LayoutDashboard, FolderTree, Users, Settings, Plus, Menu, Briefcase } from 'lucide-react';
 import { Project } from '../../../types';
@@ -24,10 +23,11 @@ export const SidebarView: React.FC<SidebarViewProps> = ({
     return (
         <aside className={`${isOpen ? 'w-72' : 'w-0'} ${sidebarStyle.className} sidebar-container flex flex-col overflow-hidden shadow-xl`}>
             <div className={`p-4 ${sidebarStyle.border} border-b flex items-center justify-between`}>
-                <div className="font-bold text-xl tracking-wider flex items-center">
-                    <div className={`w-8 h-8 rounded-lg ${theme.primary} mr-3 flex items-center justify-center text-white shadow-lg`}>CCC</div>
-                    OKR
+                {/* --- START OF MODIFIED LOGO SECTION --- */}
+                <div className={`font-bold text-xl tracking-wider flex items-center text-white p-2 rounded-lg ${theme.primary} shadow-lg`}>
+                    CCC OKR
                 </div>
+                {/* --- END OF MODIFIED LOGO SECTION --- */}
                 <button onClick={() => setIsOpen(false)} className={`${sidebarStyle.text} hover:text-white focus:outline-none`}>
                     <Menu size={20} />
                 </button>
